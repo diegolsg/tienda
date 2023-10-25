@@ -19,7 +19,7 @@ public class ProductoRepositoryImp  implements IProductRepository {
 
     public Optional<List<Product>> getCategory(int idCategoria){
         List<Producto> productos = productoCrudRepository.findByIdCategoriaOrderByNombreAsc(idCategoria);
-        return Optional.of(mapper.toProducto(productos));
+        return Optional.of(mapper.toProducts(productos));
     }
 
    public  Optional<Product> getProducto(int idProducto){
