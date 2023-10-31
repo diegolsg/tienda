@@ -1,7 +1,7 @@
 package com.quind.tienda.domain.service;
 
 import com.quind.tienda.domain.model.Product;
-import com.quind.tienda.domain.repository.interfaces.IProductRepository;
+import com.quind.tienda.domain.interfaceRepository.IProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,19 +12,22 @@ public class ProductService {
     @Autowired
     private IProductRepository productRepository;
     public List<Product> getAll(){
-        return productRepository.getAll();
+       return productRepository.getAll();
     }
-    public Optional<Product> getProducto(int idProducto){
-        return productRepository.getProducto(idProducto);
+    public Optional<Product> getProduct(int productId){
+        return productRepository.getProduct(productId);
     }
-    public Optional<List<Product>> getCategory(int idCategoria) {
-        return productRepository.getCategory(idCategoria);
+    public Optional<List<Product>> getByCategory(int categoryId) {
+
+        return productRepository.getByCategory(categoryId);
     }
-    public Product save(Product producto){
-        return productRepository.save(producto);
+    public Product save(Product product){
+        return productRepository.save(product);
     }
-    public void delete(int idProducto){
-        productRepository.delete(idProducto);
+    public boolean delete(int productId){
+        return getProduct(productId).map(product -> {
+            productRepository.delete(productId);
+            return true;}).orElse(false);
     }
 
 

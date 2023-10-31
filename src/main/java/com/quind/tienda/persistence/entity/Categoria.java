@@ -1,8 +1,6 @@
 package com.quind.tienda.persistence.entity;
 
 import jakarta.persistence.*;
-import lombok.Data;
-
 import java.util.List;
 
 @Entity

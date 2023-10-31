@@ -2,6 +2,7 @@ package com.quind.tienda.persistence.entity;
 
 import jakarta.persistence.*;
 
+import java.util.List;
 
 @Entity
 @Table(name = "PRODUCTOS")
@@ -19,9 +20,12 @@ public class Producto {
     @Column(name = "cantidad_stock")
     private Integer cantidadStock;
     private Boolean estado;
-    @ManyToMany
+    @ManyToOne
     @JoinColumn(name = "id_categoria", insertable = false,updatable = false)
     private Categoria categoria;
+    @OneToMany(mappedBy = "producto")
+    private List<ComprasProducto> comprasProductos;
+
 
     public Integer getIdProducto() {
         return idProducto;

@@ -2,31 +2,31 @@ package com.quind.tienda.domain.model;
 
 
 public class Category {
-    private int idCategory;
-    private String description;
-    private boolean action;
+    private int categoryId;
+    private String category;
+    private boolean active;
 
-    public int getIdCategory() {
-        return idCategory;
+    public int getCategoryId() {
+        return categoryId;
     }
 
-    public void setIdCategory(int idCategory) {
-        this.idCategory = idCategory;
+    public void setCategoryId(int categoryId) {
+        this.categoryId = categoryId;
     }
 
-    public String getDescription() {
-        return description;
+    public String getCategory() {
+        return category;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setCategory(String category) {
+        this.category = category;
     }
 
-    public boolean isAction() {
-        return action;
+    public boolean isActive() {
+        return active;
     }
 
-    public void setAction(boolean action) {
-        this.action = action;
+    public void setActive(boolean active) {
+        this.active = active;
     }
 }

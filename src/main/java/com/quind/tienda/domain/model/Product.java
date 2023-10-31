@@ -2,20 +2,20 @@ package com.quind.tienda.domain.model;
 
 
 public class Product {
-    private  int idProduct;
+    private  int productId;
     private String name;
     private int categoryId;
     private double price;
-    private int Stock;
+    private int stock;
     private boolean active;
     private Category category;
 
-    public int getIdProduct() {
-        return idProduct;
+    public int getProductId() {
+        return productId;
     }
 
-    public void setIdProduct(int idProduct) {
-        this.idProduct = idProduct;
+    public void setProductId(int productId) {
+        this.productId = productId;
     }
 
     public String getName() {
@@ -43,11 +43,11 @@ public class Product {
     }
 
     public int getStock() {
-        return Stock;
+        return stock;
     }
 
     public void setStock(int stock) {
-        Stock = stock;
+        stock = stock;
     }
 
     public boolean isActive() {
